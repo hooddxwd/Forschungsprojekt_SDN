@@ -1,0 +1,254 @@
+\documentclass[10pt,conference,final]{IEEEtran}
+
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+
+\usepackage{clrscode}
+\usepackage{xcolor}
+\usepackage[pdftex]{graphicx}
+
+\newcommand{\comment}[1]{{\parindent0pt\fbox{\begin{minipage}{0.45\textwidth}{\em #1}\end{minipage}}}}
+\newenvironment{changed}{\red}{\color{black}}
+\newcommand{\todo}[1]{ \color{red} \footnote{ \color{red}[#1] \color{black}} \color{black}}
+\newcommand{\Hide}[1]{%
+	{ 
+		\parindent0pt
+		\emph{\scriptsize #1}
+	}
+}
+%\renewcommand{\Hide}[1]{}
+
+\newcommand{\documenttitle}{Network Coding of Inter-Controller Communication in Software Defined Wireless Mesh Networks}
+
+\begin{document}
+	
+	%----------------------------------------------------------------------
+	% Title Information, Abstract and Keywords
+	%----------------------------------------------------------------------
+	\title{\documenttitle}
+	
+	% % %
+	% In case of double blind submissions:
+	%\author{
+	%  \IEEEauthorblockN{Anonymous}
+	%  \IEEEauthorblockA{Some Research Group\\
+	%    Some Institution\\
+	%    Some Email Addresses%
+	%  }
+	%}
+	
+	\author{
+		\IEEEauthorblockN{Xin Ding}
+		\IEEEauthorblockA{Chair of Privacy and Data Security\\
+			TU Dresden\\
+			$[$xin.ding$][$at$]$mailbox.tu-dresden.de%
+		} 
+	}
+	
+	
+	\maketitle
+	
+	% % % 
+	% sources on writing papers:
+	% look for a /good/ outline at the end of this text, the /why/ is found at this link:
+	% http://homepages.inf.ed.ac.uk/bundy/how-tos/writingGuide.html
+	% http://www-net.cs.umass.edu/kurose/writing/
+	% http://www.cs.columbia.edu/~hgs/etc/writing-style.html
+	% Read ``Zen - or the art of motorcycle maintenance'' to understand what science and research is
+	% Read ``The craft of research'' to /really/ learn how to conduct research and report about it! :-)
+	% some hints on plagiarism: http://www.williamstallings.com/Extras/Writing_Guide.html 
+	% read the text above again. the most important part (that we all tend to forget) is only 5 paragraphs
+	
+	\begin{abstract} 
+		
+		
+		%\Hide{
+		%1) Problem statement: The Problem (one is more than sufficient for each paper!)\\
+		%2) Relevance: Why ist this problem /really/ a problem?\\
+		%3) Response: What is our solution to the problem?\\
+		%4) Confidence: how do we show in this paper, that our solution is good?
+		%}
+	\end{abstract}
+	
+	\begin{IEEEkeywords}
+		% Are NOT: Peer-To-Peer, Anonymity, Privacy.
+		% BUT TAKEN FROM THIS LIST: 
+		% http://www.ieee.org/organizations/pubs/ani_prod/keywrd98.txt
+		Wireless Mesh Networks, Software Defined Networking, Network Coding, Distributed Computing
+	\end{IEEEkeywords}
+	% }
+	
+	\maketitle
+	
+	%\IEEEpeerreviewmaketitle
+	
+	\section{Introduction}
+	
+	% % % 
+	% Broad Topic
+	%\Hide{Broad Topic, potentially little broad background}
+	
+	Wireless mesh network (WMN) is a mesh topology communication network that consist of radio nodes, in which each nodes relays data. Software defined networking (SDN) is an architecture of computer networking, in which the control plane and the data plane are separated. The controller has the global view of the network and controls the action rules of routers or switches. The network is programmable and easy to configure. Network coding (NC) is a mathematical technique that combines several input packet into one coded packet. Hence, it can improve the throughput and robustness.
+	
+	In this report, we discuss the inter-controller communication in the software defined wireless mesh networks, which may encounter some traffic issues, such as packet loss and congestion. Therefore we introduce network coding to improve the performance of the communication. We will find out the message types that are suitable for our method and carry out some experiments to prove the improvement.
+	
+	% \IEEEPARstart{F}{irst} word
+	
+	
+	% % % 
+	% Thema, special problem we're looking at, motivation
+	% pbly more background for our problem (why is it actually hard?) 
+	% Broad background, general definitions
+	%\Hide{Topic, some background}
+	
+	
+	
+	% % % 
+	% our goal and our claims (what are we solving in this work?)
+	%\Hide{Our goal, research question, motivation and relevance (Why is it a problem the reader should care about? Why is it hard?)}
+	In some large scale networks, one controller is not enough to manage the whole domain. Several or more controllers are needed to fulfill the functions. Therefore, the synchronization between controllers is important. In some complex situations, the packet loss problem may be serious, retransmission is inevitable.
+	
+	% % % 
+	% Requirements for our solution
+	\Hide{Requirements for a good solution}
+	% % % 
+	% Which metrics can we use to show the quality/quantity of our solution?
+	% pbly rough definition of metrics
+	\Hide{Metrics to measure how good a solution is}
+	
+	
+	
+	\Hide{\{If space missing the related work may be presented in a paragraph here\}}
+	
+	% % % 
+	% Summary of our solution
+	%\Hide{Overview of our solution and first confidence (how do we show that it's good?)}
+	
+	
+	
+	We use network coding in the synchronization. Since each packet is coded and transmitted several times, we can still recover the whole message from the remaining, even if some of the packets are lost. As a result, we can reduce the frequency of retransmission. We use the simulation to validate our models.
+	
+	\Hide{Our contributions in this paper}
+	
+	% % % 
+	% outline of the paper / reader's digest
+	%\Hide{Reader's digest}
+	
+	The goal of this report is to come up with a new idea that combine the software defined mesh network with network coding. The rest of the report is organized as follows: A review of wireless mesh networks, software defined networking and network coding is conducted in Section II. Section III presents the theory of our work. In Section IV, the experiment is presented. Section V presents the conclusion and future work.
+	
+	% % % 
+	% Literature Survey and Background
+	\section{Background and Related Work}
+	\label{sec:background}
+	
+	% % % 
+	% Theory (probably)
+	\subsection{Wireless Mesh Network}
+	
+	The backbone of wireless mesh network is formed by mesh routers(MRs), which connect to mesh clients(MCs) \cite{akyildiz2005wireless}. MRs receive the traffic from MCs and forward it over the backbone \cite{chowdhury2008cognitive}. Though MR has the advantages like flexibility, fault tolerance and low cost, it suffers from the narrow throughput capacity, due to increasing nodes \cite{gupta2000capacity}.
+	
+	\subsection{SDN and OpenFlow}
+	
+	\subsection{Network Coding}
+	% % % 
+	% Specifications
+	
+	% % % 
+	% Implementation
+	
+	% % % 
+	% Evaluation
+	
+	% % % 
+	% Related work (can be done together with literature survey)
+	
+	\subsection{Related Work}
+	
+	% STATE HOW THE RELATED WORK RELATES TO YOUR WORK!! (how is it similar, how is it different?)
+	% Related work is not your enemy, but gives you ``the shoulders of giants'' you can stand on
+	% (and besides: some of the authors might review your paper... ;)
+	In \cite{zhu2015towards}, they develop a novel protocol called OpenCoding, in which the data forwarding function is replaced by network coding functions.
+	
+	The software-defined mesh router has a constrained radio spectrum and supports only three non-overlapping channels. In \cite{huang2015software}, they define more slices to decrease the interference conflict possibilities, which requires more complicated scheduling. Synchronizing the information of radio spectrum is vital.
+	
+	In \cite{salsano2014controller}, they conceive a "master selection" method to guarantee that only one controller will be the master of wireless mesh router(WMR), which is important in multi-controller network.
+	
+	\section{Theory}
+	
+	Our idea is defining a new frame, which contains the synchronization information of controllers. We introduce a leader controller that produce the rules and store them into a frame. The frame is divided into slices, then the slices are coded and compose a batch. The batch will be forwarded to other controllers periodically. Receivers(other controllers) decode and recover the frame. If the frame is complete, receivers send the ACK message back, otherwise, receivers send a request for the batch.
+	
+	\subsection{Frame Format}
+	
+	\subsubsection{Frequency scheduling}
+	As mentioned above, radio spectrum is a scarce resource in WMN. In \cite{huang2015software}, they divide the spectrum into smaller slices. Furthermore, the wireless radios should be frequently switched to the less-congested channels \cite{sajjadi2016comparative}. This is called channel switching(CA). Since the clients belong to different controllers may communicate with each other, These CA messages need to be transmitted in multi-controller networks.
+	
+	
+	\subsubsection{Topology}
+	
+	Clients in WMN have flexibility and can move around, which means the topology of network may change. It is more convenient if the controllers send out their owns subnets' topologies to the others.
+	
+	\subsubsection{Bandwidth}
+	
+	\subsection{Coding and decoding}
+	
+	%Set window size as w. Divide the frame into several packets, code w packets every time and slide the window.
+	
+	\section{Implementation and Evaluation}
+	
+	\subsubsection{First simulation}
+	We treat one server and one client as two controllers. The server sends frame to the client periodically. We add some packet loss rate into this link, then record the average time that the conventional method needs. Afterwards, we use random linear network coding(RLNC) method before the frame transmission, and record the average time as well.
+	
+	\section{Conclusion and Future Work}
+	
+	% % % 
+	% Further work and conclusion
+	
+	\nocite{akyildiz2005wireless}
+	\nocite{chowdhury2008cognitive}
+	\nocite{gupta2000capacity}
+	\nocite{zhu2015towards}
+	\nocite{huang2015software}
+	\nocite{salsano2014controller}
+	\nocite{sajjadi2016comparative}
+	
+	
+	\bibliographystyle{IEEEtran}
+	\bibliography{mybib}
+	
+	%----------------------------------------------------------------------
+	
+\end{document}
+
+
+% % % 
+% A good outline for a computer science paper (according to Al Bundy)
+% 
+% Title
+%     * - ideally the title should state the hypothesis of the paper 
+% 
+% Abstract
+%     * - state hypothesis and summarise the evidence that supports or refutes it 
+% 
+% Introduction
+%     * - motivate the contribution! 
+% 
+% Literature Survey
+%     * - broad and shallow account of the field, rival approaches, drawbacks of each, major outstanding problems 
+% 
+% Background
+%     * - states previous work in more detail, where this is necessary for understanding 
+% 
+% Theory
+%     * - underlying theory, definitions, theorems etc. 
+% 
+% Specification
+%     * - requirements and specs of implementation 
+% 
+% Implementation Evaluation Related Work
+%     * - narrow but deep comparison with main rivals 
+% 
+% Further Work Conclusion
+%     * - summarise research, discuss significance, restate hypothesis and the evidence for and against it, - recapitulate original motivation, reassess the state of the field in the light of this new contribution 
+% 
+% Appendices 
+% 

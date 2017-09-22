@@ -1,0 +1,4 @@
+FROM jamtur01/apache2
+MAINTAINER Xin Ding "279543965@qq.com"
+ENV APPLICATION_NAME webapp
+ENV ENVIRONMENT development

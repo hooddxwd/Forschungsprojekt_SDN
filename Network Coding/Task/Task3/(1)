@@ -1,0 +1,180 @@
+./build/linux/relay_simulations/relay_simulations --runs 100000 --symbols 8 --symbol_size 100 --error_source_sink 0.7 --error_source_relay 0.1 --error_relay_sink 0.2 --relays 1  –-source_systematic 0 --recode 0
+[ RUN      ] Relay.binary (100000 runs / 1.000000 iteration)
+[  CONFIG  ] error_relay_sink=0.200000,error_source_relay=0.100000,error_source_sink=0.700000,recode=0,relay_transmit_on_receive=1,relays=1,source_systematic=1,symbol_size=100,symbols=8
+[   TIME   ] 4625.243000 milliseconds
+[   RESULT ] channel_relay0_to_sink_dropped 
+[          ]    Average: 1.717940 packets
+[          ]        Max: 11.000000 packets (+9.282060 packets / +540.301757 %)
+[          ]        Min: 0.000000 packets (-1.717940 packets / -100.000000 %)
+[   RESULT ] channel_relay0_to_sink_ok 
+[          ]    Average: 6.857960 packets
+[          ]        Max: 20.000000 packets (+13.142040 packets / +191.631914 %)
+[          ]        Min: 2.000000 packets (-4.857960 packets / -70.836809 %)
+[   RESULT ] channel_source_to_relay0_dropped 
+[          ]    Average: 0.954760 packets
+[          ]        Max: 8.000000 packets (+7.045240 packets / +737.906909 %)
+[          ]        Min: 0.000000 packets (-0.954760 packets / -100.000000 %)
+[   RESULT ] channel_source_to_relay0_ok 
+[          ]    Average: 8.575900 packets
+[          ]        Max: 27.000000 packets (+18.424100 packets / +214.835761 %)
+[          ]        Min: 3.000000 packets (-5.575900 packets / -65.018249 %)
+[   RESULT ] channel_source_to_sink_dropped 
+[          ]    Average: 6.674250 packets
+[          ]        Max: 25.000000 packets (+18.325750 packets / +274.573922 %)
+[          ]        Min: 0.000000 packets (-6.674250 packets / -100.000000 %)
+[   RESULT ] channel_source_to_sink_ok 
+[          ]    Average: 2.856410 packets
+[          ]        Max: 9.000000 packets (+6.143590 packets / +215.080818 %)
+[          ]        Min: 0.000000 packets (-2.856410 packets / -100.000000 %)
+[   RESULT ] relay0_innovative_from_source 
+[          ]    Average: 7.128500 packets
+[          ]        Max: 8.000000 packets (+0.871500 packets / +12.225573 %)
+[          ]        Min: 3.000000 packets (-4.128500 packets / -57.915410 %)
+[   RESULT ] relay0_waste_from_source 
+[          ]    Average: 0.547090 packets
+[          ]        Max: 15.000000 packets (+14.452910 packets / +2641.779232 %)
+[          ]        Min: 0.000000 packets (-0.547090 packets / -100.000000 %)
+[   RESULT ] sink_innovative_from_relay0 
+[          ]    Average: 5.588570 packets
+[          ]        Max: 8.000000 packets (+2.411430 packets / +43.149321 %)
+[          ]        Min: 1.000000 packets (-4.588570 packets / -82.106335 %)
+[   RESULT ] sink_innovative_from_source 
+[          ]    Average: 2.411430 packets
+[          ]        Max: 7.000000 packets (+4.588570 packets / +190.284188 %)
+[          ]        Min: 0.000000 packets (-2.411430 packets / -100.000000 %)
+[   RESULT ] sink_linear_dept_from_relay0 
+[          ]    Average: 1.058820 packets
+[          ]        Max: 13.000000 packets (+11.941180 packets / +1127.781870 %)
+[          ]        Min: 0.000000 packets (-1.058820 packets / -100.000000 %)
+[   RESULT ] sink_receive_from_relay0 
+[          ]    Average: 6.857960 packets
+[          ]        Max: 20.000000 packets (+13.142040 packets / +191.631914 %)
+[          ]        Min: 2.000000 packets (-4.857960 packets / -70.836809 %)
+[   RESULT ] sink_receive_from_source 
+[          ]    Average: 2.856410 packets
+[          ]        Max: 9.000000 packets (+6.143590 packets / +215.080818 %)
+[          ]        Min: 0.000000 packets (-2.856410 packets / -100.000000 %)
+[   RESULT ] source_sent 
+[          ]    Average: 19.061320 packets
+[          ]        Max: 56.000000 packets (+36.938680 packets / +193.788678 %)
+[          ]        Min: 8.000000 packets (-11.061320 packets / -58.030189 %)
+[   RESULT ] ticks 
+[          ]    Average: 9.530660 packets
+[          ]        Max: 28.000000 packets (+18.469340 packets / +193.788678 %)
+[          ]        Min: 4.000000 packets (-5.530660 packets / -58.030189 %)
+[----------] 
+[ RUN      ] Relay.binary8 (100000 runs / 1.000000 iteration)
+[  CONFIG  ] error_relay_sink=0.200000,error_source_relay=0.100000,error_source_sink=0.700000,recode=0,relay_transmit_on_receive=1,relays=1,source_systematic=1,symbol_size=100,symbols=8
+[   TIME   ] 4436.999000 milliseconds
+[   RESULT ] channel_relay0_to_sink_dropped 
+[          ]    Average: 1.449230 packets
+[          ]        Max: 12.000000 packets (+10.550770 packets / +728.025917 %)
+[          ]        Min: 0.000000 packets (-1.449230 packets / -100.000000 %)
+[   RESULT ] channel_relay0_to_sink_ok 
+[          ]    Average: 5.795180 packets
+[          ]        Max: 9.000000 packets (+3.204820 packets / +55.301475 %)
+[          ]        Min: 2.000000 packets (-3.795180 packets / -65.488561 %)
+[   RESULT ] channel_source_to_relay0_dropped 
+[          ]    Average: 0.806760 packets
+[          ]        Max: 8.000000 packets (+7.193240 packets / +891.620804 %)
+[          ]        Min: 0.000000 packets (-0.806760 packets / -100.000000 %)
+[   RESULT ] channel_source_to_relay0_ok 
+[          ]    Average: 7.244410 packets
+[          ]        Max: 16.000000 packets (+8.755590 packets / +120.859946 %)
+[          ]        Min: 3.000000 packets (-4.244410 packets / -58.588760 %)
+[   RESULT ] channel_source_to_sink_dropped 
+[          ]    Average: 5.630710 packets
+[          ]        Max: 17.000000 packets (+11.369290 packets / +201.915744 %)
+[          ]        Min: 0.000000 packets (-5.630710 packets / -100.000000 %)
+[   RESULT ] channel_source_to_sink_ok 
+[          ]    Average: 2.420460 packets
+[          ]        Max: 7.000000 packets (+4.579540 packets / +189.201226 %)
+[          ]        Min: 0.000000 packets (-2.420460 packets / -100.000000 %)
+[   RESULT ] relay0_innovative_from_source 
+[          ]    Average: 6.948090 packets
+[          ]        Max: 8.000000 packets (+1.051910 packets / +15.139556 %)
+[          ]        Min: 3.000000 packets (-3.948090 packets / -56.822666 %)
+[   RESULT ] sink_innovative_from_relay0 
+[          ]    Average: 5.580730 packets
+[          ]        Max: 8.000000 packets (+2.419270 packets / +43.350422 %)
+[          ]        Min: 2.000000 packets (-3.580730 packets / -64.162395 %)
+[   RESULT ] sink_innovative_from_source 
+[          ]    Average: 2.419270 packets
+[          ]        Max: 6.000000 packets (+3.580730 packets / +148.008697 %)
+[          ]        Min: 0.000000 packets (-2.419270 packets / -100.000000 %)
+[   RESULT ] sink_receive_from_relay0 
+[          ]    Average: 5.795180 packets
+[          ]        Max: 9.000000 packets (+3.204820 packets / +55.301475 %)
+[          ]        Min: 2.000000 packets (-3.795180 packets / -65.488561 %)
+[   RESULT ] sink_receive_from_source 
+[          ]    Average: 2.420460 packets
+[          ]        Max: 7.000000 packets (+4.579540 packets / +189.201226 %)
+[          ]        Min: 0.000000 packets (-2.420460 packets / -100.000000 %)
+[   RESULT ] source_sent 
+[          ]    Average: 16.102340 packets
+[          ]        Max: 38.000000 packets (+21.897660 packets / +135.990545 %)
+[          ]        Min: 8.000000 packets (-8.102340 packets / -50.317780 %)
+[   RESULT ] ticks 
+[          ]    Average: 8.051170 packets
+[          ]        Max: 19.000000 packets (+10.948830 packets / +135.990545 %)
+[          ]        Min: 4.000000 packets (-4.051170 packets / -50.317780 %)
+[----------] 
+[ RUN      ] Relay.binary16 (100000 runs / 1.000000 iteration)
+[  CONFIG  ] error_relay_sink=0.200000,error_source_relay=0.100000,error_source_sink=0.700000,recode=0,relay_transmit_on_receive=1,relays=1,source_systematic=1,symbol_size=100,symbols=8
+[   TIME   ] 6973.096000 milliseconds
+[   RESULT ] channel_relay0_to_sink_dropped 
+[          ]    Average: 1.450800 packets
+[          ]        Max: 14.000000 packets (+12.549200 packets / +864.984836 %)
+[          ]        Min: 0.000000 packets (-1.450800 packets / -100.000000 %)
+[   RESULT ] channel_relay0_to_sink_ok 
+[          ]    Average: 5.799950 packets
+[          ]        Max: 8.000000 packets (+2.200050 packets / +37.932224 %)
+[          ]        Min: 2.000000 packets (-3.799950 packets / -65.516944 %)
+[   RESULT ] channel_source_to_relay0_dropped 
+[          ]    Average: 0.806590 packets
+[          ]        Max: 8.000000 packets (+7.193410 packets / +891.829802 %)
+[          ]        Min: 0.000000 packets (-0.806590 packets / -100.000000 %)
+[   RESULT ] channel_source_to_relay0_ok 
+[          ]    Average: 7.250750 packets
+[          ]        Max: 20.000000 packets (+12.749250 packets / +175.833534 %)
+[          ]        Min: 3.000000 packets (-4.250750 packets / -58.624970 %)
+[   RESULT ] channel_source_to_sink_dropped 
+[          ]    Average: 5.643730 packets
+[          ]        Max: 18.000000 packets (+12.356270 packets / +218.938007 %)
+[          ]        Min: 0.000000 packets (-5.643730 packets / -100.000000 %)
+[   RESULT ] channel_source_to_sink_ok 
+[          ]    Average: 2.413610 packets
+[          ]        Max: 7.000000 packets (+4.586390 packets / +190.022000 %)
+[          ]        Min: 0.000000 packets (-2.413610 packets / -100.000000 %)
+[   RESULT ] relay0_innovative_from_source 
+[          ]    Average: 6.950740 packets
+[          ]        Max: 8.000000 packets (+1.049260 packets / +15.095659 %)
+[          ]        Min: 3.000000 packets (-3.950740 packets / -56.839128 %)
+[   RESULT ] sink_innovative_from_relay0 
+[          ]    Average: 5.586390 packets
+[          ]        Max: 8.000000 packets (+2.413610 packets / +43.205183 %)
+[          ]        Min: 1.000000 packets (-4.586390 packets / -82.099352 %)
+[   RESULT ] sink_innovative_from_source 
+[          ]    Average: 2.413610 packets
+[          ]        Max: 7.000000 packets (+4.586390 packets / +190.022000 %)
+[          ]        Min: 0.000000 packets (-2.413610 packets / -100.000000 %)
+[   RESULT ] sink_receive_from_relay0 
+[          ]    Average: 5.799950 packets
+[          ]        Max: 8.000000 packets (+2.200050 packets / +37.932224 %)
+[          ]        Min: 2.000000 packets (-3.799950 packets / -65.516944 %)
+[   RESULT ] sink_receive_from_source 
+[          ]    Average: 2.413610 packets
+[          ]        Max: 7.000000 packets (+4.586390 packets / +190.022000 %)
+[          ]        Min: 0.000000 packets (-2.413610 packets / -100.000000 %)
+[   RESULT ] source_sent 
+[          ]    Average: 16.114680 packets
+[          ]        Max: 40.000000 packets (+23.885320 packets / +148.220877 %)
+[          ]        Min: 8.000000 packets (-8.114680 packets / -50.355825 %)
+[   RESULT ] ticks 
+[          ]    Average: 8.057340 packets
+[          ]        Max: 20.000000 packets (+11.942660 packets / +148.220877 %)
+[          ]        Min: 4.000000 packets (-4.057340 packets / -50.355825 %)
+[----------] 
+[     DONE ] 16.746539 seconds in total
+[----------] 
+
