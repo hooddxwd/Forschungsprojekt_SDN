@@ -14,6 +14,7 @@ void handle_udp_msg(int fd)
     socklen_t len;
     int count;
     struct sockaddr_in clent_addr;
+    int i;
     while(1)
     {
         memset(buf, 0, BUFF_LEN);
@@ -25,8 +26,10 @@ void handle_udp_msg(int fd)
             return;
         }
         printf("client:%s\n",buf);
+        sscanf(buf,"%d",&i);
         memset(buf, 0, BUFF_LEN);
-        sprintf(buf, "I have recieved %d bytes data!\n", count);
+        sprintf(buf,"%d th packet is received.\n",i);
+ //       sprintf(buf, "I have recieved %d bytes data!\n", count);
         sendto(fd, buf, BUFF_LEN, 0, (struct sockaddr*)&clent_addr, len);
 
     }

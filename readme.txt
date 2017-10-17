@@ -16,7 +16,15 @@ The report is in the Latex folder.
         
 14.09.17
     There is a method called “Coded TCP”
+    Instead of ACK, they modify the TCP with a 'seen' back.
+    I think I can add some similiar functions that I need to my UDP communication.
+19.09.17
+    In Towards Effective Intra-Flow Network Coding in Software Defined Wireless Mesh Networks, they didn't talk about TCP or UDP or how to solve the retransmission problem in TCP.
 20.09.17
     Already have a udp communication program that runs on the local, still try to find the way to run that on different dockers.
 22.09.17
-    The client docker can send data to the server and the server can repeatly receive them and send an ACK back.
+    The client docker can send data to the server and the server can repeatedly receive them and send an ACK back.
+25.09.17
+    Combine the docker with the mininet(control the dockers by multi-terminals)
+    The client can send data to the server repeatedly, but without receiving acks from the server. The problem comes from the packet loss. When the packet or the ack is lost, the client can't receive an ACK, and it blocks until one ACK is received. But another ACK needs new packet from client
+    Next step: use the select() to build a timeout mechanism, so that the client don't wait for the ACK that won't come.
